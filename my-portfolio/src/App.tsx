@@ -1,7 +1,13 @@
+import List from "./components/List";
 import Navbar from "./components/Navbar";
 
 function App(){
-    return <div><Navbar/></div>;
+    return (
+      <div>
+        <Navbar />
+        <List/>
+      </div>
+    );
 }
 
 export default App;
