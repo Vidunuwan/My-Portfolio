@@ -1,25 +1,36 @@
 import { useState } from "react";
 
-function List() {
-  const items = ["HRMS", "Taxi", "AutoLk", "Report Genarator", "LMS"];
-  const [selectedIndex,setSelectedInex]=useState(-1);
-  
+interface Props {
+  items: string[];
+  title: string;
+  onSelectItem: (item: string) => void;
+}
+
+function List({ items, title, onSelectItem }: Props) {
+  const [selectedIndex, setSelectedInex] = useState(-1);
 
   return (
-    <ul className="list-group">
-      {items.map((item, index) => (
-        <li
-          onClick={()=>{setSelectedInex(index);}}
-          className={
-            selectedIndex === index
-              ? "list-group-item active"
-              : "list-group-item"
-          }
-        >
-          {item}
-        </li>
-      ))}
-    </ul>
+    <>
+      <h1>{title}</h1>
+      <ul className="list-group">
+        {items.map((item, index) => (
+          <li
+          key={index}
+            onClick={() => {
+              setSelectedInex(index);
+              onSelectItem(item);
+            }}
+            className={
+              selectedIndex === index
+                ? "list-group-item active"
+                : "list-group-item"
+            }
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 
