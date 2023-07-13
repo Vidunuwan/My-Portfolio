@@ -3,6 +3,8 @@ import Alert from "./components/Alert";
 import Buttons from "./components/Buttons";
 import List from "./components/List";
 import Navbar from "./components/Navbar";
+import Typist from "react-typist";
+import Typed from "react-typed";
 
 function App() {
   const items = ["HRMS", "Taxi", "LMS", "Reporrt Genarator"];
@@ -31,6 +33,10 @@ function App() {
           setAlertVisibility(true);
         }}
       />
+      <Typist>
+        <span>Umayana Vidunuwan Dissanayake</span>
+      </Typist>
+      <Typed strings={["Hello", "World", "React"]} typeSpeed={80} loop={true} />
     </div>
   );
 }
