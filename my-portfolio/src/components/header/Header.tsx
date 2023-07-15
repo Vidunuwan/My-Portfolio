@@ -16,15 +16,16 @@ function Header() {
             />
           </h1>
         </div>
-        <div className="title-professions">
-          <h1>
+        <div className="title-professions-start">
+          <h2>
             I'm{" "}
             <Typed
+              className="title-professions"
               strings={["Software Engineer", "Full stack developer"]}
               typeSpeed={100}
               loop={true}
             />
-          </h1>
+          </h2>
         </div>
       </div>
     </>
